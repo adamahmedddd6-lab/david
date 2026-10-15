@@ -4,11 +4,11 @@
 <title>Beit El Wadi Bookings</title>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F2F3EC;--card:#fff;--ink:#14160F;--mute:#666C58;--line:#DADDCC;--olive:#5F7034;--pine:#4F5F2A;--sun:#BCC88E;--head:#16190F;--c-camp:#6E7F3C;--c-group:#3D4A22;--c-party:#A9B56F;--c-private:#1A1C16;--free:#FAFBF6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E100A;--card:#171A11;--ink:#EEF0E3;--mute:#9EA48D;--line:#2D3325;--olive:#6E8040;--pine:#B3C27A;--sun:#53612E;--head:#090B06;--free:#12150D}}
+:root{--bg:#F3F2EF;--card:#fff;--ink:#1C1B19;--mute:#5E5C57;--line:#D6D3CC;--line2:#B9B5AC;--olive:#3F3D39;--pine:#3F3D39;--sun:#B9B5AC;--head:#1C1B19;--c-camp:#7B766D;--c-group:#45423D;--c-party:#CFC9BD;--c-private:#111110;--free:#FFFFFF;--zebra:#F8F7F5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121211;--card:#1B1B19;--ink:#F0EFEB;--mute:#A09D96;--line:#33322F;--line2:#4A4844;--olive:#7A766E;--pine:#CFCBC3;--sun:#5E5C57;--head:#0A0A09;--free:#161615;--zebra:#1F1F1D}}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.45 Figtree,Cairo,system-ui,sans-serif}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 Figtree,Cairo,system-ui,sans-serif}
 header{background:var(--head);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 header h1{margin:0;font-size:20px;font-weight:800}
 header small{opacity:.8;display:block;font-weight:400}
@@ -23,20 +23,23 @@ input,select,textarea{font:inherit;color:var(--ink);background:var(--card);borde
 .tab{background:transparent;color:var(--mute);border-radius:10px 10px 0 0}
 .tab.on{background:var(--card);color:var(--ink)}
 .legend{display:flex;gap:12px;flex-wrap:wrap;padding:10px 16px;font-size:13px;color:var(--mute)}
-.legend i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:5px;vertical-align:-1px}
+.legend{font-size:14px!important;color:var(--ink)!important}.legend i{display:inline-block;width:16px;height:16px;border-radius:4px;margin-inline-end:6px;vertical-align:-3px;border:1px solid var(--line2)}
 main{padding:0 16px 40px}
 .panel{background:var(--card);border-radius:0 14px 14px 14px;border:1px solid var(--line)}
 .scroll{overflow-x:auto}
-.grid{min-width:1500px}
-.row{display:flex;border-bottom:1px solid var(--line)}
+.grid{min-width:2400px}
+.row{display:flex;border-bottom:1px solid var(--line2)}
+.row:nth-child(even) .track .cell{background:var(--zebra)}
 .row:last-child{border:0}
-.lab{width:150px;flex:none;padding:8px 10px;position:sticky;left:0;background:var(--card);z-index:3;font-weight:600;border-right:1px solid var(--line)}
-.gh{background:var(--bg);font-size:12px;font-weight:800;color:var(--pine);padding:5px 10px;position:sticky;left:0}
-.track{flex:1;position:relative;display:flex;min-height:44px}
-.cell{flex:1;border-left:1px solid var(--line);background:var(--free);cursor:pointer;min-height:44px}
-.cell:hover{background:color-mix(in srgb,var(--sun) 35%,transparent)}
-.hr{flex:2;font-size:12px;color:var(--mute);padding:6px 0 6px 4px;border-left:1px solid var(--line)}
-.bk{position:absolute;top:0;bottom:0;border-radius:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);display:flex;align-items:center;color:#fff;padding:2px 7px;font-size:12px;font-weight:600;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;z-index:2;cursor:pointer;border:0;text-align:left}
+.lab{width:170px;flex:none;padding:10px 12px;font-size:16px;display:flex;align-items:center;position:sticky;left:0;background:var(--card);z-index:3;font-weight:600;border-right:1px solid var(--line)}
+.gh{background:var(--head);font-size:14px;font-weight:800;color:#fff;padding:7px 12px;position:sticky;left:0;width:100%;letter-spacing:.3px}
+.track{flex:1;position:relative;display:flex;min-height:56px}
+.cell{flex:1;border-left:1px dotted var(--line);background:var(--free);cursor:pointer;min-height:56px}
+.cell:nth-child(4n+3){border-left:1px solid var(--line)}
+.cell:nth-child(4n+1){border-left:2px solid var(--line2)}
+.cell:hover{background:color-mix(in srgb,var(--sun) 55%,transparent)!important}
+.hr{flex:4;font-size:14px;font-weight:800;color:var(--ink);padding:8px 0 8px 6px;border-left:2px solid var(--line2);background:var(--bg)}
+.bk{position:absolute;top:3px;bottom:3px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.35);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;color:#fff;padding:2px 9px;font-size:14px;font-weight:700;line-height:1.25;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;z-index:2;cursor:pointer;border:0;text-align:left}
 .list{padding:8px}
 .item{display:flex;gap:12px;padding:12px;border-bottom:1px solid var(--line);align-items:center;cursor:pointer}
 .item:last-child{border:0}
@@ -44,7 +47,7 @@ main{padding:0 16px 40px}
 .dot{width:10px;height:36px;border-radius:5px;flex:none}
 .empty{padding:28px;text-align:center;color:var(--mute)}
 dialog{border:0;border-radius:16px;padding:0;max-width:560px;width:calc(100% - 24px);background:var(--card);color:var(--ink)}
-dialog::backdrop{background:rgba(10,25,21,.55)}
+dialog::backdrop{background:rgba(20,20,18,.6)}
 form{padding:18px;display:grid;gap:12px}
 form h2{margin:0}
 label{font-size:13px;font-weight:600;color:var(--mute);display:block;margin-bottom:3px}
@@ -54,9 +57,9 @@ label{font-size:13px;font-weight:600;color:var(--mute);display:block;margin-bott
 .chip{background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:6px 10px;font-size:13px}
 .chip.on{background:var(--olive);color:#fff;border-color:var(--olive)}
 .gl{font-size:12px;font-weight:800;color:var(--pine);width:100%;margin-top:4px}
-.err{background:#FDE7EA;color:#8a1f30;padding:10px;border-radius:10px;font-weight:600}
+.err{background:var(--bg);color:var(--ink);padding:10px;border-radius:10px;font-weight:600;border:1px solid var(--line2);border-inline-start:5px solid var(--ink)}
 .acts{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
-.danger{background:#FDE7EA;color:#8a1f30;margin-inline-end:auto}
+.danger{background:var(--card);color:var(--ink);border:2px solid var(--ink);margin-inline-end:auto}
 #lock{min-height:100vh;display:grid;place-items:center;padding:20px;background:var(--head)}
 #lock .box{background:var(--card);border-radius:18px;padding:26px;max-width:340px;width:100%;display:grid;gap:12px;text-align:center}
 #lock h1{margin:0;font-size:22px}#lock p{margin:0;color:var(--mute)}
@@ -124,7 +127,7 @@ body.ro .cell{cursor:default}body.ro .cell:hover{background:var(--free)}
 
 <script>
 const GROUPS=[
- ["Courts",["Volleyball 1","Volleyball 2","Basketball 1","Basketball 2","Dodgeball 1","Dodgeball 2","Pickleball 1","Pickleball 2","Padel 1","Padel 2","Padel 3"]],
+ ["Courts",["Volleyball 1","Volleyball 2","Basketball 1","Basketball 2","Dodgeball 1","Dodgeball 2","Pickleball 1","Pickleball 2","Padel 1","Padel 2","Padel 3","Beach Handball","Tennis","Squash 1","Squash 2"]],
  ["Fields",["Big Stadium","Small Stadium","Kora Banat"]],
  ["Adventure",["Zipline & High Ropes","Campfire"]],
  ["Outdoor",["Pool","Park","Pergola"]]];
@@ -134,9 +137,9 @@ let day=iso(new Date()),view="s",editing=null,picked=new Set(),data=[],canEdit=f
 const $=id=>document.getElementById(id);
 
 let lang="en",roleKey="";try{lang=localStorage.getItem("bew_lang")==="ar"?"ar":"en"}catch(e){}
-const T={en:{brand:"Beit El Wadi",sub:"Reservations",signintxt:"Sign in to open the bookings.",user:"Username or email",pass:"Password",signin:"Sign in",signout:"Sign out",newbtn:"+ New booking",today:"Today",t1:"Schedule",t2:"Daylist",t3:"History",search:"Search all bookings by group, place or phone",g_Courts:"Courts",g_Fields:"Fields",g_Adventure:"Adventure",g_Outdoor:"Outdoor",camp:"Camp",group:"Group",party:"Party / event",private:"Private",legendtip:"Tap an empty slot to book. Tap a colored bar to edit.",lname:"Camp or group name",nameph:"e.g. Summer Camp – Blue Team",ltype:"Type",lpeople:"Number of people",lwhere:"Where (tap one or more)",ldate:"Date",lfrom:"From",lto:"To",lphone:"Contact phone",lrep:"Repeat for how many days?",lnotes:"Notes",del:"Delete booking",cancel:"Cancel",save:"Save booking",newb:"New booking",edit:"Edit booking",details:"Booking details",empty_day:"Nothing booked on this day yet. Tap “New booking” to add one.",empty_hist:"No bookings found.",to:"to",people:"people",e_name:"Add a camp or group name.",e_where:"Choose at least one place to book.",e_time:"The end time must be after the start time.",e_save:"Could not save. Check your internet connection and that your account is allowed to edit.",e_del:"Could not delete this booking.",confirmdel:"Delete this booking?",bad:"Wrong username or password.",net:"No internet connection.",editor:"Editor",viewer:"View only",prev:"Preview",dbfail:"Cannot read the database - check the database rules",t4:"Print",pmonth:"Month",pyear:"Year",pplace:"Place",pall:"All places",pstyle:"Layout",pcal:"Calendar",plist:"List",pbtn:"Print",pdate:"Date",ptime:"Time",pname:"Camp / group",pplaceh:"Place",ppeople:"People",pphone:"Phone",pnone:"No bookings this month."},
-ar:{brand:"بيت الوادي",sub:"الحجوزات",signintxt:"سجّل الدخول لفتح الحجوزات.",user:"اسم المستخدم أو البريد الإلكتروني",pass:"كلمة المرور",signin:"تسجيل الدخول",signout:"تسجيل الخروج",newbtn:"+ حجز جديد",today:"اليوم",t1:"الجدول",t2:"قائمة اليوم",t3:"السجل",search:"ابحث في كل الحجوزات بالاسم أو المكان أو الهاتف",g_Courts:"الملاعب",g_Fields:"ملاعب كرة القدم",g_Adventure:"المغامرات",g_Outdoor:"الأماكن الخارجية",camp:"معسكر",group:"مجموعة",party:"حفلة / مناسبة",private:"خاص",legendtip:"اضغط على خانة فارغة للحجز. اضغط على الشريط الملوّن للتعديل.",lname:"اسم المعسكر أو المجموعة",nameph:"مثال: المعسكر الصيفي – الفريق الأزرق",ltype:"النوع",lpeople:"عدد الأشخاص",lwhere:"المكان (اختر مكانًا أو أكثر)",ldate:"التاريخ",lfrom:"من",lto:"إلى",lphone:"هاتف التواصل",lrep:"كرّر لعدد كم يوم؟",lnotes:"ملاحظات",del:"حذف الحجز",cancel:"إلغاء",save:"حفظ الحجز",newb:"حجز جديد",edit:"تعديل الحجز",details:"تفاصيل الحجز",empty_day:"لا توجد حجوزات في هذا اليوم بعد. اضغط «حجز جديد» للإضافة.",empty_hist:"لا توجد حجوزات.",to:"إلى",people:"أشخاص",e_name:"أضف اسم المعسكر أو المجموعة.",e_where:"اختر مكانًا واحدًا على الأقل.",e_time:"يجب أن يكون وقت النهاية بعد وقت البداية.",e_save:"تعذّر الحفظ. تحقق من الإنترنت ومن أن حسابك مسموح له بالتعديل.",e_del:"تعذّر حذف هذا الحجز.",confirmdel:"هل تريد حذف هذا الحجز؟",bad:"اسم المستخدم أو كلمة المرور غير صحيحة.",net:"لا يوجد اتصال بالإنترنت.",editor:"محرّر",viewer:"عرض فقط",prev:"معاينة",dbfail:"تعذّر قراءة قاعدة البيانات - راجع قواعد قاعدة البيانات",t4:"طباعة",pmonth:"الشهر",pyear:"السنة",pplace:"المكان",pall:"كل الأماكن",pstyle:"الشكل",pcal:"تقويم",plist:"قائمة",pbtn:"اطبع",pdate:"التاريخ",ptime:"الوقت",pname:"المعسكر / المجموعة",pplaceh:"المكان",ppeople:"الأشخاص",pphone:"الهاتف",pnone:"لا توجد حجوزات هذا الشهر."}};
-const VN={"Volleyball 1":"الكرة الطائرة 1","Volleyball 2":"الكرة الطائرة 2","Basketball 1":"كرة السلة 1","Basketball 2":"كرة السلة 2","Dodgeball 1":"دودج بول 1","Dodgeball 2":"دودج بول 2","Pickleball 1":"بيكل بول 1","Pickleball 2":"بيكل بول 2","Padel 1":"بادل 1","Padel 2":"بادل 2","Padel 3":"بادل 3","Big Stadium":"الملعب الكبير","Small Stadium":"الملعب الصغير","Kora Banat":"كورة بنات","Zipline & High Ropes":"الزيب لاين والحبال العالية","Campfire":"نار المخيم","Pool":"المسبح","Park":"الحديقة","Pergola":"البرجولة"};
+const T={en:{brand:"Beit El Wadi",sub:"Reservations",signintxt:"Sign in to open the bookings.",user:"Username or email",pass:"Password",signin:"Sign in",signout:"Sign out",newbtn:"+ New booking",today:"Today",t1:"Schedule",t2:"Daylist",t3:"History",search:"Search all bookings by group, place or phone",g_Courts:"Courts",g_Fields:"Fields",g_Adventure:"Adventure",g_Outdoor:"Outdoor",camp:"Camp",group:"Group",party:"Party / event",private:"Private",legendtip:"Each small box = 15 minutes. Tap an empty box to book. Tap a bar to edit.",lname:"Camp or group name",nameph:"e.g. Summer Camp – Blue Team",ltype:"Type",lpeople:"Number of people",lwhere:"Where (tap one or more)",ldate:"Date",lfrom:"From",lto:"To",lphone:"Contact phone",lrep:"Repeat for how many days?",lnotes:"Notes",del:"Delete booking",cancel:"Cancel",save:"Save booking",newb:"New booking",edit:"Edit booking",details:"Booking details",empty_day:"Nothing booked on this day yet. Tap “New booking” to add one.",empty_hist:"No bookings found.",to:"to",people:"people",e_name:"Add a camp or group name.",e_where:"Choose at least one place to book.",e_time:"The end time must be after the start time.",e_save:"Could not save. Check your internet connection and that your account is allowed to edit.",e_del:"Could not delete this booking.",confirmdel:"Delete this booking?",bad:"Wrong username or password.",net:"No internet connection.",editor:"Editor",viewer:"View only",prev:"Preview",dbfail:"Cannot read the database - check the database rules",t4:"Print",pmonth:"Month",pyear:"Year",pplace:"Place",pall:"All places",pstyle:"Layout",pcal:"Calendar",plist:"List",pbtn:"Print",pdate:"Date",ptime:"Time",pname:"Camp / group",pplaceh:"Place",ppeople:"People",pphone:"Phone",pnone:"No bookings this month."},
+ar:{brand:"بيت الوادي",sub:"الحجوزات",signintxt:"سجّل الدخول لفتح الحجوزات.",user:"اسم المستخدم أو البريد الإلكتروني",pass:"كلمة المرور",signin:"تسجيل الدخول",signout:"تسجيل الخروج",newbtn:"+ حجز جديد",today:"اليوم",t1:"الجدول",t2:"قائمة اليوم",t3:"السجل",search:"ابحث في كل الحجوزات بالاسم أو المكان أو الهاتف",g_Courts:"الملاعب",g_Fields:"ملاعب كرة القدم",g_Adventure:"المغامرات",g_Outdoor:"الأماكن الخارجية",camp:"معسكر",group:"مجموعة",party:"حفلة / مناسبة",private:"خاص",legendtip:"كل مربع صغير = 15 دقيقة. اضغط على مربع فارغ للحجز. اضغط على الشريط للتعديل.",lname:"اسم المعسكر أو المجموعة",nameph:"مثال: المعسكر الصيفي – الفريق الأزرق",ltype:"النوع",lpeople:"عدد الأشخاص",lwhere:"المكان (اختر مكانًا أو أكثر)",ldate:"التاريخ",lfrom:"من",lto:"إلى",lphone:"هاتف التواصل",lrep:"كرّر لعدد كم يوم؟",lnotes:"ملاحظات",del:"حذف الحجز",cancel:"إلغاء",save:"حفظ الحجز",newb:"حجز جديد",edit:"تعديل الحجز",details:"تفاصيل الحجز",empty_day:"لا توجد حجوزات في هذا اليوم بعد. اضغط «حجز جديد» للإضافة.",empty_hist:"لا توجد حجوزات.",to:"إلى",people:"أشخاص",e_name:"أضف اسم المعسكر أو المجموعة.",e_where:"اختر مكانًا واحدًا على الأقل.",e_time:"يجب أن يكون وقت النهاية بعد وقت البداية.",e_save:"تعذّر الحفظ. تحقق من الإنترنت ومن أن حسابك مسموح له بالتعديل.",e_del:"تعذّر حذف هذا الحجز.",confirmdel:"هل تريد حذف هذا الحجز؟",bad:"اسم المستخدم أو كلمة المرور غير صحيحة.",net:"لا يوجد اتصال بالإنترنت.",editor:"محرّر",viewer:"عرض فقط",prev:"معاينة",dbfail:"تعذّر قراءة قاعدة البيانات - راجع قواعد قاعدة البيانات",t4:"طباعة",pmonth:"الشهر",pyear:"السنة",pplace:"المكان",pall:"كل الأماكن",pstyle:"الشكل",pcal:"تقويم",plist:"قائمة",pbtn:"اطبع",pdate:"التاريخ",ptime:"الوقت",pname:"المعسكر / المجموعة",pplaceh:"المكان",ppeople:"الأشخاص",pphone:"الهاتف",pnone:"لا توجد حجوزات هذا الشهر."}};
+const VN={"Volleyball 1":"الكرة الطائرة 1","Volleyball 2":"الكرة الطائرة 2","Basketball 1":"كرة السلة 1","Basketball 2":"كرة السلة 2","Dodgeball 1":"دودج بول 1","Dodgeball 2":"دودج بول 2","Pickleball 1":"بيكل بول 1","Pickleball 2":"بيكل بول 2","Padel 1":"بادل 1","Padel 2":"بادل 2","Padel 3":"بادل 3","Beach Handball":"هاندبول شاطئي","Tennis":"تنس","Squash 1":"اسكواش 1","Squash 2":"اسكواش 2","Big Stadium":"الملعب الكبير","Small Stadium":"الملعب الصغير","Kora Banat":"كورة بنات","Zipline & High Ropes":"الزيب لاين والحبال العالية","Campfire":"نار المخيم","Pool":"المسبح","Park":"الحديقة","Pergola":"البرجولة"};
 const t=k=>(T[lang][k]??T.en[k]??k);
 const vn=v=>lang=="ar"?(VN[v]||v):v;
 function clash(n,c){const a=fmt(c.start),b=fmt(c.end);return lang=="ar"?esc(vn(n.venue))+' محجوز بالفعل بتاريخ '+n.date+' من '+a+' إلى '+b+' باسم “'+esc(c.name)+'”. اختر وقتًا أو مكانًا آخر.':esc(n.venue)+' is already booked on '+n.date+' from '+a+' to '+b+' by “'+esc(c.name)+'”. Pick another time or place.'}
@@ -149,7 +152,7 @@ function applyLang(){
  $("role").textContent=roleKey?"· "+t(roleKey):"";
  const tv=$("type").value||"camp",sv=$("start").value,ev=$("end").value;
  $("type").innerHTML=Object.keys(TYPES).map(k=>'<option value="'+k+'">'+t(k)+'</option>').join("");$("type").value=tv;
- let o="";for(let h=H0;h<=H1;h+=.5)o+='<option value="'+h+'">'+fmt(h)+'</option>';
+ let o="";for(let h=H0;h<=H1;h+=.25)o+='<option value="'+h+'">'+fmt(h)+'</option>';
  $("start").innerHTML=o;$("end").innerHTML=o;if(sv)$("start").value=sv;if(ev)$("end").value=ev;
  $("legend").innerHTML=Object.entries(TYPES).map(([k,v])=>'<span><i style="background:'+v[1]+'"></i>'+t(k)+'</span>').join("")+'<span>'+t("legendtip")+'</span>';
  drawChips();render();
@@ -205,10 +208,10 @@ function render(){
    h+='<div class="row"><div class="gh">'+t("g_"+g)+'</div></div>';
    vs.forEach(v=>{
     h+='<div class="row"><div class="lab">'+esc(vn(v))+'</div><div class="track" data-v="'+esc(v)+'">';
-    for(let i=H0;i<H1;i+=.5)h+='<div class="cell" data-h="'+i+'" title="'+esc(vn(v))+' '+fmt(i)+'"></div>';
+    for(let i=H0;i<H1;i+=.25)h+='<div class="cell" data-h="'+i+'" title="'+esc(vn(v))+' '+fmt(i)+'"></div>';
     todays.filter(b=>b.venue==v).forEach(b=>{
      const l=(b.start-H0)/(H1-H0)*100,w=(b.end-b.start)/(H1-H0)*100;
-     h+='<button class="bk" data-id="'+b.id+'" style="left:'+l+'%;width:'+w+'%;background:'+TYPES[b.type][1]+';color:'+TYPES[b.type][2]+'" title="'+esc(b.name)+' '+fmt(b.start)+'–'+fmt(b.end)+'">'+esc(b.name)+'</button>';
+     h+='<button class="bk" data-id="'+b.id+'" style="left:'+l+'%;width:'+w+'%;background:'+TYPES[b.type][1]+';color:'+TYPES[b.type][2]+'" title="'+esc(b.name)+' '+fmt(b.start)+'–'+fmt(b.end)+'"><span style="overflow:hidden;text-overflow:ellipsis;max-width:100%">'+esc(b.name)+'</span><span style="font-size:12px;font-weight:600;opacity:.85">'+fmt(b.start)+'–'+fmt(b.end)+'</span></button>';
     });
     h+='</div></div>';
    });
